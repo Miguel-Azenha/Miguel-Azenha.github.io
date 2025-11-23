@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio — [O Teu Nome]</title>
+  <meta name="description" content="Portfólio de programador — projetos, competências e contacto." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: linear-gradient(135deg,#0b1220 0%, #0f1724 100%);
+      --muted: #9aa4b2;
+      --accent: #7c5cff;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.03);
+      --radius: 14px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,'Helvetica Neue',Arial;
+      background: radial-gradient(1000px 600px at 10% 10%, rgba(124,92,255,0.12), transparent),
+                  linear-gradient(180deg,#071024 0%, #0f1724 100%);
+      color:#e6eef8;-webkit-font-smoothing:antialiased}
+    .container{max-width:1100px;margin:36px auto;padding:28px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:52px;height:52px;border-radius:12px;background:var(--accent);display:grid;place-items:center;font-weight:800;color:white}
+    .brand h1{font-size:18px;margin:0}
+    .brand p{margin:0;font-size:13px;color:var(--muted)}
+
+    nav{display:flex;gap:12px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:inherit;cursor:pointer;font-weight:600}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#48d3ff);color:#021024;border:0}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:28px;align-items:center}
+    .hero-card{background:var(--card);padding:26px;border-radius:var(--radius);box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    .intro h2{margin:0;font-size:28px}
+    .intro p{color:var(--muted);line-height:1.5}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .skill{padding:8px 10px;border-radius:999px;background:var(--glass);font-size:13px}
+
+    .profile{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));text-align:center}
+    .avatar{width:120px;height:120px;border-radius:16px;background:linear-gradient(135deg,#21304a,#31435a);display:inline-grid;place-items:center;font-weight:700;font-size:28px}
+    .meta{margin-top:12px;color:var(--muted);font-size:14px}
+
+    section.projects{margin-top:28px}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:12px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid var(--glass-2);min-height:140px;display:flex;flex-direction:column;justify-content:space-between}
+    .card h3{margin:0;font-size:16px}
+    .card p{color:var(--muted);font-size:13px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.03)}
+
+    footer{margin-top:36px;padding:18px;border-radius:12px;background:rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
+
+    /* small screens */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .profile{order:-1}
+    }
+
+    /* utility */
+    .muted{color:var(--muted)}
+    a{text-decoration:none;color:inherit}
+    .project-actions{display:flex;gap:8px}
+    .pill{padding:8px 12px;border-radius:999px;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.03)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">TN</div>
+        <div>
+          <h1>[O Teu Nome]</h1>
+          <p>Desenvolvedor Full‑Stack • JavaScript • Python • DevOps</p>
+        </div>
+      </div>
+      <nav>
+        <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Projetos</button>
+        <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contacto</button>
+        <a class="btn primary" href="#" download="CV-[O-TEU-NOME].pdf">Descarregar CV</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <div class="hero-card intro">
+        <h2>Olá — eu sou <span style="color:var(--accent)">[O Teu Nome]</span></h2>
+        <p>Crio aplicações web rápidas, acessíveis e bem estruturadas. Trabalho com frontend (React / Svelte), backend (Node / Python) e infra (Docker, CI/CD).</p>
+
+        <div class="skills" aria-hidden>
+          <div class="skill">JavaScript (ES6+)</div>
+          <div class="skill">TypeScript</div>
+          <div class="skill">React</div>
+          <div class="skill">Node.js</div>
+          <div class="skill">Python</div>
+          <div class="skill">PostgreSQL</div>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:10px">
+          <a class="btn primary" href="#projects">Ver projetos</a>
+          <a class="btn" href="mailto:teuemail@exemplo.com">Envia-me um email</a>
+        </div>
+
+        <div style="margin-top:16px;color:var(--muted);font-size:13px">Disponível para trabalho remoto e projetos por contrato.</div>
+      </div>
+
+      <aside class="profile" aria-label="Perfil">
+        <div class="avatar" aria-hidden>TN</div>
+        <h3 style="margin:10px 0 0 0">[O Teu Nome]</h3>
+        <div class="meta">Lisboa, Portugal • Disponível</div>
+
+        <div style="margin-top:12px;display:flex;gap:8px;justify-content:center">
+          <a class="pill" href="#" aria-label="GitHub">GitHub</a>
+          <a class="pill" href="#" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </aside>
+    </main>
+
+    <section id="projects" class="projects">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h2 style="margin:0">Projetos</h2>
+        <div>
+          <select id="filter" onchange="filterProjects(this.value)" class="btn" style="padding:8px">
+            <option value="all">Todos</option>
+            <option value="web">Web</option>
+            <option value="api">APIs</option>
+            <option value="ml">Machine Learning</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Project 1 -->
+        <article class="card" data-type="web">
+          <div>
+            <h3>App de Gestão de Tarefas</h3>
+            <p class="muted">Uma SPA com autenticação, sincronização em tempo real e integração com calendário.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">Node</span><span class="tag">Socket.io</span></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <div class="project-actions">
+              <a class="btn" href="#">Ver demo</a>
+              <a class="btn" href="#">Código</a>
+            </div>
+            <div class="muted">2024</div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card" data-type="api">
+          <div>
+            <h3>Microserviço de Pagamentos</h3>
+            <p class="muted">API RESTful com testes, deploy automatizado e observabilidade.</p>
+            <div class="tags"><span class="tag">Node</span><span class="tag">Docker</span><span class="tag">Postgres</span></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <div class="project-actions">
+              <a class="btn" href="#">Documentação</a>
+              <a class="btn" href="#">Código</a>
+            </div>
+            <div class="muted">2023</div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card" data-type="ml">
+          <div>
+            <h3>Classificador de Texto</h3>
+            <p class="muted">Pipeline de processamento e modelo para categorizar texto com avaliação automática.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">FastAPI</span></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <div class="project-actions">
+              <a class="btn" href="#">Experimentação</a>
+              <a class="btn" href="#">Código</a>
+            </div>
+            <div class="muted">2022</div>
+          </div>
+        </article>
+
+        <!-- Project 4 (placeholder) -->
+        <article class="card" data-type="web">
+          <div>
+            <h3>Website Institucional</h3>
+            <p class="muted">Site informativo com foco em performance e SEO.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Accessibility</span></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <div class="project-actions">
+              <a class="btn" href="#">Ver</a>
+              <a class="btn" href="#">Código</a>
+            </div>
+            <div class="muted">2021</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:28px">
+      <h2>Contacto</h2>
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:12px">
+        <form onsubmit="sendContact(event)" style="background:var(--card);padding:18px;border-radius:12px">
+          <label style="display:block;margin-bottom:8px">Nome</label>
+          <input id="name" required placeholder="O teu nome" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+
+          <label style="display:block;margin:12px 0 8px 0">Email</label>
+          <input id="email" type="email" required placeholder="email@exemplo.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+
+          <label style="display:block;margin:12px 0 8px 0">Mensagem</label>
+          <textarea id="message" rows="4" required placeholder="Escreve a tua mensagem" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <button class="btn primary" type="submit">Enviar</button>
+            <button class="btn" type="reset">Limpar</button>
+          </div>
+        </form>
+
+        <aside style="padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));">
+          <h3 style="margin-top:0">Onde me encontrar</h3>
+          <p class="muted">Lisboa, Portugal</p>
+          <p class="muted">Email: teuemail@exemplo.com</p>
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <a class="btn" href="#">GitHub</a>
+            <a class="btn" href="#">LinkedIn</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <div class="muted">© <span id="year"></span> [O Teu Nome]. Feito com ☕ e código.</div>
+      <div class="muted">Última actualização: <span id="updated">Nov 23, 2025</span></div>
+    </footer>
+  </div>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function filterProjects(type){
+      const cards = document.querySelectorAll('#projectsGrid .card');
+      cards.forEach(c=>{
+        if(type==='all' || c.dataset.type===type) c.style.display='flex'; else c.style.display='none';
+      })
+    }
+
+    function sendContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      // fallback: open mail client. For production, integrate with serverless function or service.
+      const subject = encodeURIComponent('Contacto via portfólio: ' + name);
+      const body = encodeURIComponent(message + '\n\n--\n' + name + '\n' + email);
+      window.location.href = `mailto:teuemail@exemplo.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
