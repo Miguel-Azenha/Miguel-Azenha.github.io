@@ -1,193 +1,187 @@
-<!doctype html>
-<html lang="pt-PT">
+<!DOCTYPE html>
+<html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfólio de Miguel Azenha</title>
-  <meta name="description" content="Portfólio de programador — projetos, competências e contacto." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Site</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-20P6FBV20Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-20P6FBV20Y');
-</script>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">TN</div>
-        <div>
-          <h1>Miguel Azenha</h1>
-          <p>Desenvolvedor Full‑Stack • JavaScript • Python • DevOps</p>
-        </div>
-      </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
       <nav>
-        <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Projetos</button>
-        <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contacto</button>
-        <a class="btn primary" href="#" download="CV-[O-TEU-NOME].pdf">Descarregar CV</a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#projects">Projetos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
       </nav>
-    </header>
 
-    <main class="hero">
-      <div class="hero-card intro">
-        <h2>Olá o meu nome é <span style="color:var(--accent)">Miguel Azenha</span></h2>
-        <p>Crio aplicações web rápidas, acessíveis e bem estruturadas. Trabalho com frontend (React / Svelte), backend (Node / Python) e infra (Docker, CI/CD).</p>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        ☰
+      </button>
+    </div>
+  </header>
 
-        <div class="skills" aria-hidden>
-          <div class="skill">JavaScript (ES6+)</div>
-          <div class="skill">TypeScript</div>
-          <div class="skill">React</div>
-          <div class="skill">Node.js</div>
-          <div class="skill">Python</div>
-          <div class="skill">PostgreSQL</div>
-        </div>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h1>Construímos Experiências Digitais</h1>
+      <p>Design moderno e soluções criativas para o teu negócio.</p>
+      <a href="#contact" class="btn">Começar</a>
+    </div>
+  </section>
 
-        <div style="margin-top:18px;display:flex;gap:10px">
-          <a class="btn primary" href="#projects">Ver projetos</a>
-          <a class="btn" href="mailto:teuemail@exemplo.com">Envia-me um email</a>
-        </div>
-
-        <div style="margin-top:16px;color:var(--muted);font-size:13px">Disponível para trabalho remoto e projetos por contrato.</div>
+  <!-- Sobre -->
+  <section class="about" id="about">
+      <div class="section-head">
+        <h2>ABOUT ME</h2>
+        <div class="line"></div>
+      </div>
+    <div class="container about-grid">
+      <div class="about-text">
+        <p>Somos uma equipa focada em criar soluções digitais inovadoras e impactantes. Tenho sido cliente da CEX há já bastante tempo e a minha experiência tem sido sempre extremamente positiva, especialmente na compra de jogos em disco de segunda mão. Ao longo dos anos adquiri vários títulos para PS4 e PS3, e posso afirmar com total confiança que nunca tive qualquer problema com o estado dos jogos ou com o seu funcionamento. Recomendo vivamente a CEX a qualquer jogador que procure qualidade, segurança e boas oportunidades, seja em jogos mais recentes ou em clássicos inesquecíveis.</p>
+        <!-- <a href="#" class="btn-outline">Saber Mais</a> -->
       </div>
 
-      <aside class="profile" aria-label="Perfil">
-        <div class="avatar" aria-hidden>TN</div>
-        <h3 style="margin:10px 0 0 0">Miguel Azenha</h3>
-        <div class="meta">Lisboa, Portugal • Disponível</div>
+      <div class="about-image">
+        <img src="foto.jpeg" alt="Foto" />
+      </div>
+    </div>
+  </section>
 
-        <div style="margin-top:12px;display:flex;gap:8px;justify-content:center">
-          <a class="pill" href="#" aria-label="GitHub">GitHub</a>
-          <a class="pill" href="#" aria-label="LinkedIn">LinkedIn</a>
-        </div>
-      </aside>
-    </main>
-
-    <section id="projects" class="projects">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <h2 style="margin:0">Projetos</h2>
-        <div>
-          <select id="filter" onchange="filterProjects(this.value)" class="btn" style="padding:8px">
-            <option value="all">Todos</option>
-            <option value="web">Web</option>
-            <option value="api">APIs</option>
-            <option value="ml">Machine Learning</option>
-          </select>
-        </div>
+  <!-- Formação -->
+  <section class="education" id="education">
+    <div class="container">
+      <div class="section-head">
+        <h2>FORMAÇÃO</h2>
+        <div class="line"></div>
       </div>
 
-      <div class="projects-grid" id="projectsGrid">
-        <!-- Project 1 -->
-        <article class="card" data-type="web">
-          <div>
-            <h3>App de Gestão de Tarefas</h3>
-            <p class="muted">Uma SPA com autenticação, sincronização em tempo real e integração com calendário.</p>
-            <div class="tags"><span class="tag">React</span><span class="tag">Node</span><span class="tag">Socket.io</span></div>
+      <div class="education-grid">
+        <div class="edu-item">
+          <h3>Escola de Negócios de São Paulo</h3>
+          <span class="year">2035 - 2035</span>
+          <p>Sou um parágrafo. Clique aqui para adicionar o seu próprio texto e editar.</p>
+        </div>
+
+        <div class="edu-item">
+          <h3>Faculdade de Marketing Ibirapuera</h3>
+          <span class="year">2035 - 2035</span>
+          <p>Sou um parágrafo. Clique aqui para adicionar o seu próprio texto e editar.</p>
+        </div>
+
+        <div class="edu-item">
+          <h3>Universidade de Comunicação Sociais</h3>
+          <span class="year">2035 - 2035</span>
+          <p>Sou um parágrafo. Clique aqui para adicionar o seu próprio texto e editar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2>PROJETOS</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-media">
+            <img src="imagem1.jpg" alt="Projeto 1" />
           </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
-            <div class="project-actions">
-              <a class="btn" href="#">Ver demo</a>
-              <a class="btn" href="#">Código</a>
-            </div>
-            <div class="muted">2024</div>
+          <div class="project-content">
+            <h3>Website Portfólio</h3>
+            <p>Site responsivo desenvolvido em HTML, CSS e JavaScript com foco em design moderno.</p>
+            <a class="github-btn" href="https://github.com/teuusername/projeto1" target="_blank" rel="noreferrer">
+              Ver no GitHub
+            </a>
           </div>
         </article>
 
-        <!-- Project 2 -->
-        <article class="card" data-type="api">
-          <div>
-            <h3>Microserviço de Pagamentos</h3>
-            <p class="muted">API RESTful com testes, deploy automatizado e observabilidade.</p>
-            <div class="tags"><span class="tag">Node</span><span class="tag">Docker</span><span class="tag">Postgres</span></div>
+        <article class="project-card">
+          <div class="project-media">
+            <img src="projeto2.jpg" alt="Projeto 2" />
           </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
-            <div class="project-actions">
-              <a class="btn" href="#">Documentação</a>
-              <a class="btn" href="#">Código</a>
-            </div>
-            <div class="muted">2023</div>
+          <div class="project-content">
+            <h3>App de Gestão</h3>
+            <p>Aplicação web com autenticação, base de dados e dashboard interativo.</p>
+            <a class="github-btn" href="https://github.com/teuusername/projeto2" target="_blank" rel="noreferrer">
+              Ver no GitHub
+            </a>
           </div>
         </article>
 
-        <!-- Project 3 -->
-        <article class="card" data-type="ml">
-          <div>
-            <h3>Classificador de Texto</h3>
-            <p class="muted">Pipeline de processamento e modelo para categorizar texto com avaliação automática.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">FastAPI</span></div>
+        <article class="project-card">
+          <div class="project-media">
+            <img src="projeto3.jpg" alt="Projeto 3" />
           </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
-            <div class="project-actions">
-              <a class="btn" href="#">Experimentação</a>
-              <a class="btn" href="#">Código</a>
-            </div>
-            <div class="muted">2022</div>
+          <div class="project-content">
+            <h3>Landing Page</h3>
+            <p>Landing page otimizada para conversão com animações suaves.</p>
+            <a class="github-btn" href="https://github.com/teuusername/projeto3" target="_blank" rel="noreferrer">
+              Ver no GitHub
+            </a>
           </div>
         </article>
 
-        <!-- Project 4 (placeholder) -->
-        <article class="card" data-type="web">
-          <div>
-            <h3>Website Institucional</h3>
-            <p class="muted">Site informativo com foco em performance e SEO.</p>
-            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Accessibility</span></div>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
-            <div class="project-actions">
-              <a class="btn" href="#">Ver</a>
-              <a class="btn" href="#">Código</a>
-            </div>
-            <div class="muted">2021</div>
-          </div>
-        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact" style="margin-top:28px">
-      <h2>Contacto</h2>
-      <div style="display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:12px">
-        <form onsubmit="sendContact(event)" style="background:var(--card);padding:18px;border-radius:12px">
-          <label style="display:block;margin-bottom:8px">Nome</label>
-          <input id="name" required placeholder="O teu nome" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
 
-          <label style="display:block;margin:12px 0 8px 0">Email</label>
-          <input id="email" type="email" required placeholder="email@exemplo.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
 
-          <label style="display:block;margin:12px 0 8px 0">Mensagem</label>
-          <textarea id="message" rows="4" required placeholder="Escreve a tua mensagem" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+  <!-- Contactos -->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2 class="section-title">CONTACTOS</h2>
+    <div class="line"></div>
 
-          <div style="margin-top:12px;display:flex;gap:8px">
-            <button class="btn primary" type="submit">Enviar</button>
-            <button class="btn" type="reset">Limpar</button>
-          </div>
-        </form>
+    <div class="contact-icons">
+      
+      <a href="mailto:teuemail@email.com" class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>Email</span>
+      </a>
 
-        <aside style="padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));">
-          <h3 style="margin-top:0">Onde me encontrar</h3>
-          <p class="muted">Lisboa, Portugal</p>
-          <p class="muted">Email: miguelaz2502@gmail.com</p>
-          <div style="margin-top:12px;display:flex;gap:8px">
-            <a class="btn" href="#">GitHub</a>
-            <a class="btn" href="#">LinkedIn</a>
-          </div>
-        </aside>
-      </div>
-    </section>
+      <a href="https://linkedin.com/in/teuuser" target="_blank" class="contact-item">
+        <i class="fab fa-linkedin"></i>
+        <span>LinkedIn</span>
+      </a>
 
-    <footer>
-      <div class="muted">© <span id="year"></span> [O Teu Nome]. Feito com ☕ e código.</div>
-      <div class="muted">Última actualização: <span id="updated">Nov 23, 2025</span></div>
-    </footer>
+      <a href="https://github.com/teuuser" target="_blank" class="contact-item">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+
+      <a href="https://instagram.com/teuuser" target="_blank" class="contact-item">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+
+      <a href="https://youtube.com/@teucanal" target="_blank" class="contact-item">
+  <i class="fab fa-youtube"></i>
+  <span>YouTube</span>
+</a>
+
+    </div>
   </div>
+</section>
 
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Meu Site. Todos os direitos reservados.</p>
+  </div>
+</footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
