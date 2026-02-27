@@ -138,6 +138,10 @@ body {
 
 .about-text {
   flex: 1;
+  text-align: justify;
+}
+.about-text p{
+  margin-bottom: 10px;
 }
 
 .about-image {
@@ -147,8 +151,8 @@ body {
 }
 
 .about-image img {
-  width: 250px;
-  height: 250px;      /* mesma altura e largura */
+  width: 270px;
+  height: 270px;      /* mesma altura e largura */
   object-fit: cover;  /* corta proporcionalmente */
   border-radius: 50%; /* deixa redonda */
     object-position: center 10%; /* ↓ ajusta aqui */
@@ -313,7 +317,7 @@ body {
 /* Contact Section */
 
 .contact {
-  padding: 100px 0;
+  padding: 50px 0;
   background: #f9f9f9;
   text-align: center;
 }
