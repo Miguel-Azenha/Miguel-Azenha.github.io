@@ -1,4 +1,30 @@
 /* Base */
+:root{
+  /* palette */
+  --c-navy: #355872;     /* principal */
+  --c-blue: #7AAACE;     /* destaque */
+  --c-sky:  #9CD5FF;     /* highlight */
+  --c-cream:#F7F8F0;     /* background */
+
+  /* tokens */
+  --bg: var(--c-cream);
+  --text: #0f172a;
+  --muted: rgba(15, 23, 42, 0.72);
+
+  --card: rgba(255, 255, 255, 0.72);
+  --card-solid: #ffffff;
+
+  --border: rgba(53, 88, 114, 0.18);
+  --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+
+  --radius: 16px;
+  --radius-sm: 12px;
+
+  --accent: var(--c-blue);
+  --accent-2: var(--c-sky);
+  --accent-dark: var(--c-navy);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +38,8 @@ html {
 
 body {
   line-height: 1.6;
-  color: #333;
+  color: var(--text);
+  background: var(--bg);
 }
 
 .container {
@@ -21,12 +48,16 @@ body {
   margin: 0 auto;
 }
 
+
+
 /* Header */
 .header {
   position: fixed;
   inset: 0 0 auto 0;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  background: rgba(247, 248, 240, 0.78); /* cream glass */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 18px rgba(15, 23, 42, 0.06);
   z-index: 1000;
 }
 
@@ -45,9 +76,28 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  color: var(--accent-dark);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  position: relative;
+  transition: 0.25s ease;
 }
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:0%;
+  height:2px;
+  background: var(--accent);
+  transition: 0.25s ease;
+}
+.nav-links a:hover::after{ width:100%; }
 
 .menu-toggle {
   display: none;
@@ -67,8 +117,18 @@ body {
   align-items: center;
   text-align: center;
   padding-top: 80px;
+  position: relative;
 }
-
+.hero {
+  height: 100vh;
+  background: url("imagem1.jpg") center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-top: 80px;
+  position: relative;
+}
 .hero-content h1 {
   font-size: 48px;
   margin-bottom: 20px;
@@ -80,18 +140,32 @@ body {
 }
 
 /* Buttons */
-.btn {
-  display: inline-block;
-  padding: 12px 30px;
-  background: #ff4c60;
+.btn-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 34px;
+  background: linear-gradient(
+    135deg,
+    #7AAACE,
+    #355872
+  );
   color: #fff;
   text-decoration: none;
-  border-radius: 30px;
-  transition: 0.3s;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: 0.3s ease;
+  box-shadow: 0 15px 35px rgba(53, 88, 114, 0.25);
 }
 
-.btn:hover {
-  background: #e63c50;
+.btn-cv:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px rgba(53, 88, 114, 0.35);
+}
+
+.btn-cv i {
+  font-size: 14px;
 }
 
 .btn-outline {
@@ -113,15 +187,16 @@ body {
 .section-head h2 {
   font-size: 38px;
   letter-spacing: 6px;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--accent-dark);
 }
 
 .line {
   width: 150px;
   height: 4px;
-  background: #d22c2c;
-  margin: 5px auto 0;
-  margin-bottom: 10px;
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent-2));
+  margin: 8px auto 12px;
+  border-radius: 999px;
 }
 
 /* About */
@@ -162,7 +237,26 @@ body {
 /* Education */
 .education {
   padding: 50px 0;
-  background: #f4f4f4;
+  background: rgba(53, 88, 114, 0.06); /* navy tint */
+}
+
+.edu-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.edu-item h4{
+  color: rgba(53, 88, 114, 0.85);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.year {
+  color: var(--accent-dark);
+  font-weight: 700;
 }
 
 .education-grid {
@@ -214,13 +308,7 @@ body {
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-.project-media img,
-.project-media video {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
+
 
 .project-content {
   padding: 25px;
@@ -231,6 +319,8 @@ body {
   font-size: 20px;
 }
 
+
+
 .project-content p {
   font-size: 14px;
   color: #555;
@@ -238,7 +328,7 @@ body {
 }
 
 .github-btn {
-  display: inline-block;
+  display: block;
   padding: 8px 18px;
   border: 2px solid #ff4c60;
   color: #ff4c60;
@@ -246,6 +336,10 @@ body {
   border-radius: 25px;
   font-size: 14px;
   transition: 0.3s;
+    width: fit-content;
+  margin: 0 auto;
+
+  
 }
 
 .github-btn:hover {
@@ -264,7 +358,7 @@ body {
 .footer {
   padding: 30px 0;
   text-align: center;
-  background: #f1f1f1;
+  background: #f4f4f4;
   font-size: 14px;
 }
 
@@ -318,7 +412,7 @@ body {
 
 .contact {
   padding: 50px 0;
-  background: #f9f9f9;
+  background: #f4f4f4;
   text-align: center;
 }
 
@@ -358,4 +452,219 @@ body {
 
 .contact-item:hover i {
   transform: scale(1.2);
+}
+
+
+
+/* YouTube thumbnail button */
+.video-thumb {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+
+.video-thumb img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.play-badge {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 52px;
+  color: white;
+  text-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.15);
+  transition: 0.25s;
+}
+
+.video-thumb:hover .play-badge {
+  background: rgba(0,0,0,0.28);
+  transform: scale(1.02);
+}
+
+/* Modal */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 2000;
+}
+
+.video-modal.open {
+  display: block;
+}
+
+.video-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
+
+.video-modal-content {
+  position: relative;
+  width: min(1000px, 92vw);
+  margin: 8vh auto;
+  background: #000;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+}
+
+.video-modal-x {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 2;
+  border: 0;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 20px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.video-frame {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+/* fallback se aspect-ratio não existir */
+@supports not (aspect-ratio: 16 / 9) {
+  .video-frame {
+    position: relative;
+    padding-top: 56.25%;
+  }
+  .video-frame iframe {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Media consistente (imagem/vídeo) com proporção 16:9 */
+.project-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000;
+}
+
+.project-media img,
+.project-media video,
+.project-media iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.project-media img,
+.project-media video {
+  object-fit: cover;
+}
+
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.project-content p {
+  margin-bottom: 0; /* já estás a usar gap */
+}
+
+.github-btn {
+  margin-top: auto;   /* empurra o botão para o fundo */
+  margin-left: auto;
+  margin-right: auto; /* mantém centrado */
+}
+
+
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: 0.25s ease;
+  box-shadow: var(--shadow);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(122, 170, 206, 0.45);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+}
+
+.project-content h3{
+  color: var(--accent-dark);
+}
+
+.project-content p{
+  color: var(--muted);
+}
+
+.github-btn {
+  display: block;
+  padding: 9px 18px;
+  border: 2px solid var(--accent);
+  color: var(--accent-dark);
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 14px;
+  transition: 0.25s ease;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  background: rgba(156, 213, 255, 0.18);
+}
+
+.github-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+
+.contact {
+  padding: 50px 0;
+  background: rgba(53, 88, 114, 0.06);
+  text-align: center;
+}
+
+.contact-item {
+  color: var(--accent-dark);
+}
+
+.contact-item:hover {
+  color: var(--accent);
+  transform: translateY(-8px);
 }
