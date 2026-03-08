@@ -100,7 +100,7 @@ body {
 /* Hero */
 .hero {
   height: 100vh;
-  background: url("imagem1.jpg") center/cover no-repeat;
+  background: url("images\\heroImage.jpg") center/cover no-repeat;
   color: #fff;
   display: flex;
   align-items: center;
@@ -410,3 +410,19 @@ body {
   .about-grid { flex-direction: column; }
   .projects-grid { grid-template-columns: 1fr; }
 }
+
+/* Development Banner */
+.dev-banner {
+  width: 100%;
+  background: #355872;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+}
+
